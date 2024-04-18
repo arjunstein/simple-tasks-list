@@ -4,6 +4,9 @@
 
 @section('content')
     <div>
+        <div>
+            <a href="{{ route('tasks.create') }}">Add new task</a>
+        </div><br>
         @forelse ($tasks as $task)
             <div>
                 <a href="{{ route('tasks.show', ['id' => $task->id]) }}">{{ $task->title }}</a>
