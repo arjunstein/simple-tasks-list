@@ -17,10 +17,10 @@ class TaskFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->sentence,
+            'title' => 'Section - ' . $this->faker->sentence(1),
             'description' => $this->faker->paragraph,
-            'long_description' => $this->faker->paragraph(7, true),
-            'completed' => $this->faker->boolean(),
+            'long_description' => $this->faker->paragraph(2, true),
+            'completed' => 0,
         ];
     }
 }
