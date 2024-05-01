@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'The list of tasks')
+@section('title', 'The list of tasks laravel course udemy 2024')
 
 @section('content')
     <div>
@@ -10,7 +10,8 @@
         </nav>
 
         @forelse ($tasks as $task)
-            <div>
+            <div class="flex gap-2">
+                <h4>{{ $task->id }}. </h4>
                 <a href="{{ route('tasks.show', ['task' => $task->id]) }}"
                     @class(['line-through' => $task->completed])>{{ $task->title }}</a>
             </div>
