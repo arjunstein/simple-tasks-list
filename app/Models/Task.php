@@ -20,4 +20,18 @@ class Task extends Model
         $this->completed = !$this->completed;
         $this->save();
     }
+
+    public static function countProgress()
+    {
+        $totalTasks = self::count();
+        $completedTasks = self::where('completed', 1)->count();
+
+        if ($totalTasks == 0) {
+            return 0;
+        }
+
+        $percentage = ($completedTasks / $totalTasks) * 100;
+
+        return $percentage;
+    }
 }
