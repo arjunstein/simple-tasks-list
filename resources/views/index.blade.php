@@ -4,6 +4,7 @@
 
 @section('content')
     <div>
+        <h1>Learn progress: {{ number_format($progress,1) }}% from 100%</h1>
         <nav class="mb-4">
             <a href="{{ route('tasks.create') }}" class="link">Add new
                 task</a>

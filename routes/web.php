@@ -22,7 +22,8 @@ Route::get('/', function () {
 
 Route::get('/tasks', function () {
     return view('index', [
-        'tasks' => Task::orderBy('id', 'asc')->paginate()
+        'tasks' => Task::orderBy('id', 'asc')->paginate(),
+        'progress' => Task::countProgress()
     ]);
 })->name('tasks.index');
 
